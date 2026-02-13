@@ -1,6 +1,4 @@
 import ratelimit from "../config/upstash.js"
-
-
 const rateLimiter =  async (req,res,next) => {
 
     try {
@@ -10,14 +8,11 @@ const rateLimiter =  async (req,res,next) => {
                 message: "To many requests, please try again later"
             })
         }
-
         next()
-
     } catch (error) {
         console.log("Rate limit error",error)
         next(error)
     }
-
 }
 
 export default rateLimiter

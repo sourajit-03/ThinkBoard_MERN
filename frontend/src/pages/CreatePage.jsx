@@ -37,7 +37,6 @@ const CreatePage = () => {
       setLoading(false)
     }
 
-
   };
 
   return (
