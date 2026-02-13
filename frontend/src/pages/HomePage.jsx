@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import NavBar from '../components/NavBar'
+import Navbar from '../components/Navbar'
 import RateLimitedUI from '../components/RateLimitedUI'
 import api from "../lib/axios"
 import toast from "react-hot-toast"
@@ -34,7 +34,7 @@ const HomePage = () => {
 
   return (
     <div className='min-h-screen'>
-      <NavBar />
+      <Navbar />
 
       {isRateLimited && <RateLimitedUI />}
 
