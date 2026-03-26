@@ -21,7 +21,11 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 app.use(express.json());
-app.use(rateLimiter);
+if (process.env.UPSTASH_REDIS_REST_URL) {
+  app.use(rateLimiter);
+} else {
+  console.log("Rate limiter disabled (Upstash not configured)");
+}
 app.use("/api/notes", notesRoutes);
 
 if (process.env.NODE_ENV === "production") {
